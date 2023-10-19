@@ -14,6 +14,9 @@ git add FILE_NAME
 Make a local commit
 ```bash
 git commit -m "Commit message"
+
+# We can automatically stage files (thereby avoiding adding if we add the -a flag
+git commit -am "Commit message"
 ```
 
 Push it to the repo
