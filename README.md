@@ -15,7 +15,7 @@ Make a local commit
 ```bash
 git commit -m "Commit message"
 
-# We can automatically stage files (thereby avoiding adding if we add the -a flag
+# We can automatically stage files (thereby avoiding adding if we include the -a flag
 git commit -am "Commit message"
 ```
 
