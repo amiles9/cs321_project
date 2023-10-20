@@ -7,7 +7,7 @@ public class FormTest {
     public void getStatusTest(){
         Form form = new Form();
         String status = "R";
-        form.status = status;
+        form.setStatus(status);
         assertEquals(form.getStatus(), status);
     }
     @Test
