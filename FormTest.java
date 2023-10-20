@@ -3,23 +3,23 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 public class FormTest {
-    public FormTest(){
-        Form form = new Form();
-    }
     @Test
     public void getStatusTest(){
+        Form form = new Form();
         String status = "R";
         form.status = status;
         assertEquals(form.getStatus(), status);
     }
     @Test
     public void setStatusTest(){
+        Form form = new Form();
         String status = "R";
         form.setStatus(status);
         assertEquals(form.status, status);
     }
     @Test
     public void getFormTest(){
+        Form form = new Form();
         int id = 0;
         form.setID(id);
         form.updateDatabase();
