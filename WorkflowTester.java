@@ -9,27 +9,37 @@ public class WorkflowTester {
 
     @Test
     public void emptyQueueTest(){
-        assertEquals(current.next_review_form(), -1);
-        assertEquals(current.next_approve_form(), -1);
+        assertEquals(current.nextReviewForm(), -1);
+        assertEquals(current.nextApproveForm(), -1);
     }
 
     @Test
-    public void add_review_form_test(){
-        current.add_review_form(1);
-        assertEquals(current.next_review_form(), 1);
+    public void addReviewForm_test(){
+        current.addReviewForm(1);
+        assertEquals(current.nextReviewForm(), 1);
     }
 
     @Test
-    public void add_approve_form_test(){
-        current.add_approve_form(1);
-        assertEquals(current.next_approve_form(), 1);
+    public void addApproveForm_test(){
+        current.addApproveForm(1);
+        assertEquals(current.nextApproveForm(), 1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void illegalReviewAdd(){
+        current.addReviewForm(-5);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void illegalApproveAdd(){
+        current.addApproveForm(-5);
     }
 
     @Test
     public void nextFormTests(){
-        current.add_approve_form(2);
-        current.add_review_form(2);
-        assertEquals(current.next_review_form(), 2);
-        assertEquals(current.next_approve_form(), 2);
+        current.addApproveForm(2);
+        current.addReviewForm(2);
+        assertEquals(current.nextReviewForm(), 2);
+        assertEquals(current.nextApproveForm(), 2);
     }
 }
