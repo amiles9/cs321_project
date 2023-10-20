@@ -18,4 +18,18 @@ public class WorkflowTester {
         current.add_review_form(1);
         assertEquals(current.next_review_form(), 1);
     }
+
+    @Test
+    public void add_approve_form_test(){
+        current.add_approve_form(1);
+        assertEquals(current.next_approve_form(), 1);
+    }
+
+    @Test
+    public void nextFormTests(){
+        current.add_approve_form(2);
+        current.add_review_form(2);
+        assertEquals(current.next_review_form(), 2);
+        assertEquals(current.next_approve_form(), 2);
+    }
 }
