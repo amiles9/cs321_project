@@ -11,15 +11,15 @@ public class Main {
         App.setRoot("main");
     }
 
-    @FXML protected void dataEntry(ActionEvent event) throws IOException {
+    @FXML protected void dataEntryScreen(ActionEvent event) throws IOException {
         App.setRoot("data_entry");
     }
 
-    @FXML protected void reviewer(ActionEvent event) throws IOException {
+    @FXML protected void reviewerScreen(ActionEvent event) throws IOException {
         App.setRoot("reviewer");
     }
 
-    @FXML protected void approver(ActionEvent event) throws IOException {
+    @FXML protected void approverScreen(ActionEvent event) throws IOException {
         App.setRoot("approver");
     }
 

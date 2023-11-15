@@ -10,13 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.text.*;
 
 public class Approver extends Main{
-    @FXML Text feedback;
-    @FXML TextField immigrantFirstName;
-    @FXML TextField immigrantLastName;
-    @FXML TextField immigrantAlienNumber;
-    @FXML TextField relativeFirstName;
-    @FXML TextField relativeLastName;
-    @FXML TextField relativeAlienNumber;
 
     @FXML Label displayIDLabel;
     @FXML Label eligibilityLabel;
@@ -29,7 +22,7 @@ public class Approver extends Main{
     @FXML TextField idInputField;
     @FXML TextField eligibilityInputField;
 
-    Form form;
+    private Form form;
 
     public Approver(){
     }

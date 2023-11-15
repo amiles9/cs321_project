@@ -23,16 +23,26 @@ public class DataEntry extends Main{
     }
 
     @FXML protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+        if (!checkFields()){
+            feedback.setText("One or more of the fields are empty");
+            return;
+        }
+        createForm();
+    }
+    
+    @FXML protected boolean checkFields(){
         if (immigrantFirstName.getText().equals("") ||
             immigrantLastName.getText().equals("") ||
             immigrantAlienNumber.getText().equals("") ||
             relativeFirstName.getText().equals("") ||
             relativeLastName.getText().equals("") ||
             relativeAlienNumber.getText().equals("")){
-            
-            feedback.setText("One or more of the fields are empty");
-            return;
+            return false;
         }
+        return true;
+    }
+
+    @FXML protected void createForm(){
         feedback.setText("Submitted");
         Form form = new Form(immigrantFirstName.getText(), immigrantLastName.getText(), immigrantAlienNumber.getText(), relativeFirstName.getText(),relativeLastName.getText(), relativeAlienNumber.getText());
         App.workflowTable.add_approve_form(form.getId());
