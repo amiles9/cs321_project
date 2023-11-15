@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="com.example.Approver" xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10">
+   <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Text fx:id="requestIDLabel" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="0">
+      <Button text="Request Next ID" onAction="#handleRequestID"/>
+   </HBox>
+
+    <TextField fx:id="inputField" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Button text="Check Eligibility" onAction="#checkEligibility"/>
+   </HBox>
+    
+    <Label fx:id="eligibilityLabel" text="" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <TextField fx:id="idInputField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <TextField fx:id="eligibilityInputField" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button text="Update" onAction="#update"/>
+   </HBox>
+
+    <Label fx:id="updateStatusLabel" text="" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+
+
+
+
+</GridPane>
+
+<!-- <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
+   <children>
+      <Label text="Primary View" />
+      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox> -->
