@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.*;
 
@@ -19,42 +20,53 @@ public class Approver extends Main{
 
     @FXML Label displayIDLabel;
     @FXML Label eligibilityLabel;
-    @FXML Label updateStatusLabel;
     @FXML Label status;
+    @FXML Button approve;
+    @FXML Button eligibilityButton;
+    @FXML Button requestID;
 
     @FXML TextField inputField;
     @FXML TextField idInputField;
     @FXML TextField eligibilityInputField;
 
-    // Form form;
+    Form form;
 
     public Approver(){
     }
 
     @FXML protected void handleRequestID(ActionEvent event) {
-        // form = Form.getForm(App.workflowTable.next_approve_form());
-        // displayIDLabel.setText("Next ID: " + form.getId());
+        int id = App.workflowTable.next_approve_form();
+        if (id == -1){
+            displayIDLabel.setText("No more forms to approve.");
+        }
+        else{
+            form = Form.getForm(id);
+            displayIDLabel.setText("ID: " + form.getId()); 
+            status.setVisible(true);
+            approve.setVisible(true);
+            eligibilityButton.setVisible(true);
+            requestID.setVisible(false);
+        }
     }
 
     @FXML protected void checkEligibility(ActionEvent event) {
-        // try {
-        //     if (Form.getId() % 2 == 0) {
-        //         eligibilityLabel.setText("Ineligible");
-        //     } else {
-        //         eligibilityLabel.setText("Eligible");
-        //     }
-        // } catch (NumberFormatException e) {
-        //     eligibilityLabel.setText("Invalid Input");
-        // }    
+        try {
+            if (form.getId() % 2 == 0) {
+                eligibilityLabel.setText("Ineligible");
+            } else {
+                eligibilityLabel.setText("Eligible");
+            }
+            eligibilityButton.setVisible(false);
+        } catch (NumberFormatException e) {
+            eligibilityLabel.setText("Invalid Input");
+        }    
     }
 
     @FXML protected void approve(ActionEvent event) {
         status.setText("Approved");
+        approve.setVisible(false);
+        requestID.setVisible(true);
+        displayIDLabel.setText("");
+        eligibilityLabel.setText("");
     }
-
-    // @FXML protected void update(ActionEvent event) {
-    //     String id = idInputField.getText();
-    //     String eligibility = eligibilityInputField.getText();
-    //     updateStatusLabel.setText("Updated");
-    // }
 }

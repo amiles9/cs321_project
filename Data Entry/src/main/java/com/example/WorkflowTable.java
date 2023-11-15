@@ -10,8 +10,8 @@ public class WorkflowTable{
     private Queue<Integer> approver_queue;
 
     public WorkflowTable(){
-        reviewer_queue = new ArrayDeque<Integer>();
-        approver_queue = new ArrayDeque<Integer>();
+        reviewer_queue = new LinkedList<Integer>();
+        approver_queue = new LinkedList<Integer>();
     }
 
     public void add_review_form(int id){

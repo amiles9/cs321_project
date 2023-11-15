@@ -17,7 +17,7 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-    static WorkflowTable workflowTable;
+    static WorkflowTable workflowTable = new WorkflowTable();
 
     @Override
     public void start(Stage stage) throws IOException {

@@ -39,7 +39,7 @@
    <TextField fx:id="relativeAlienNumber" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="7">
-      <Button text="Submit" onAction="#handleSubmitButtonAction"/>
+      <Button fx:id="submit" text="Submit" onAction="#handleSubmitButtonAction"/>
    </HBox>
 
    <Text fx:id="feedback" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
