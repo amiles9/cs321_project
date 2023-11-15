@@ -7,7 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 import javafx.scene.text.*;
 
-public class PrimaryController {
+public class DataEntry extends Main{
     @FXML Text feedback;
     @FXML TextField immigrantFirstName;
     @FXML TextField immigrantLastName;
@@ -15,15 +15,9 @@ public class PrimaryController {
     @FXML TextField relativeFirstName;
     @FXML TextField relativeLastName;
     @FXML TextField relativeAlienNumber;
-    WorkflowTable a;
 
-    public PrimaryController(){
-        a = new WorkflowTable();
-    }
-
-    @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+    public DataEntry(){
+        App.workflowTable = new WorkflowTable();
     }
 
     @FXML protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
@@ -39,7 +33,7 @@ public class PrimaryController {
             return;
         }
         feedback.setText("Submitted");
-        a.add_review_form(5);
-        System.out.println(a.next_review_form());
+        // Form form = new Form(immigrantFirstName.getText(), immigrantLastName.getText(), immigrantAlienNumber.getText(), relativeFirstName.getText(),relativeLastName.getText(), relativeAlienNumber.getText());
+        // workflowTable.add_review_form(form.getId());
     }
 }

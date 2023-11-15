@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:controller="com.example.PrimaryController" xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10">
+<GridPane fx:controller="com.example.DataEntry" xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10">
    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
 
    <Label text="Immigrant First Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
@@ -43,6 +43,8 @@
    </HBox>
 
    <Text fx:id="feedback" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+
+   <Button text="Return" onAction="#returnTo" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
 
 </GridPane>
 

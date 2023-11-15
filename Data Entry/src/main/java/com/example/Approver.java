@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.scene.text.*;
 
-public class Approver {
+public class Approver extends Main{
     @FXML Text feedback;
     @FXML TextField immigrantFirstName;
     @FXML TextField immigrantLastName;
@@ -16,46 +16,45 @@ public class Approver {
     @FXML TextField relativeFirstName;
     @FXML TextField relativeLastName;
     @FXML TextField relativeAlienNumber;
-    WorkflowTable a;
 
     @FXML Label displayIDLabel;
     @FXML Label eligibilityLabel;
     @FXML Label updateStatusLabel;
+    @FXML Label status;
 
     @FXML TextField inputField;
     @FXML TextField idInputField;
     @FXML TextField eligibilityInputField;
 
-    public Approver(){
-        a = new WorkflowTable();
-    }
+    // Form form;
 
-    @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+    public Approver(){
     }
 
     @FXML protected void handleRequestID(ActionEvent event) {
-        displayIDLabel.setText("Next ID: " + a.next_approve_form());
+        // form = Form.getForm(App.workflowTable.next_approve_form());
+        // displayIDLabel.setText("Next ID: " + form.getId());
     }
 
     @FXML protected void checkEligibility(ActionEvent event) {
-        try {
-            int input = Integer.parseInt(inputField.getText());
-            if (input % 2 == 0) {
-                eligibilityLabel.setText("Ineligible");
-            } else {
-                eligibilityLabel.setText("Eligible");
-            }
-        } catch (NumberFormatException e) {
-            eligibilityLabel.setText("Invalid Input");
-        }    
+        // try {
+        //     if (Form.getId() % 2 == 0) {
+        //         eligibilityLabel.setText("Ineligible");
+        //     } else {
+        //         eligibilityLabel.setText("Eligible");
+        //     }
+        // } catch (NumberFormatException e) {
+        //     eligibilityLabel.setText("Invalid Input");
+        // }    
     }
 
-    @FXML protected void update(ActionEvent event) {
-        displayIDLabel.setText("Next ID: " + a.next_approve_form());
-        String id = idInputField.getText();
-        String eligibility = eligibilityInputField.getText();
-        updateStatusLabel.setText("Updated");
+    @FXML protected void approve(ActionEvent event) {
+        status.setText("Approved");
     }
+
+    // @FXML protected void update(ActionEvent event) {
+    //     String id = idInputField.getText();
+    //     String eligibility = eligibilityInputField.getText();
+    //     updateStatusLabel.setText("Updated");
+    // }
 }
