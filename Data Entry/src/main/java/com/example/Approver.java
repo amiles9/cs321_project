@@ -39,6 +39,7 @@ public class Approver extends Main{
             approve.setVisible(true);
             eligibilityButton.setVisible(true);
             requestID.setVisible(false);
+            status.setText("Unapproved");
         }
     }
 
