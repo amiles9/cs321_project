@@ -18,9 +18,6 @@ public class Approver extends Main{
     @FXML Button eligibilityButton;
     @FXML Button requestID;
 
-    @FXML TextField inputField;
-    @FXML TextField idInputField;
-    @FXML TextField eligibilityInputField;
 
     private Form form;
 
