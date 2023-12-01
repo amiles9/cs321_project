@@ -25,13 +25,13 @@ public class Approver extends Main{
     }
 
     @FXML protected void handleRequestID(ActionEvent event) {
-        int id = App.workflowTable.next_approve_form();
+        int id = App.workflowTable.nextApproveForm();
         if (id == -1){
             displayIDLabel.setText("No more forms to approve.");
         }
         else{
             form = Form.getForm(id);
-            displayIDLabel.setText("ID: " + form.getId()); 
+            displayIDLabel.setText("ID: " + form.getID()); 
             status.setVisible(true);
             approve.setVisible(true);
             eligibilityButton.setVisible(true);
@@ -42,7 +42,7 @@ public class Approver extends Main{
 
     @FXML protected void checkEligibility(ActionEvent event) {
         try {
-            if (form.getId() % 2 == 0) {
+            if (form.getID() % 2 == 0) {
                 eligibilityLabel.setText("Ineligible");
             } else {
                 eligibilityLabel.setText("Eligible");

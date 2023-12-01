@@ -11,20 +11,56 @@ public class Form{
     private int id;
     private String status;
     private String immigrantFirstName;
+    public void setImmigrantFirstName(String immigrantFirstName) {
+        this.immigrantFirstName = immigrantFirstName;
+    }
+
     private String immigrantLastName;
+    public void setImmigrantLastName(String immigrantLastName) {
+        this.immigrantLastName = immigrantLastName;
+    }
+
     private String immigrantAlienNumber;
+    public void setImmigrantAlienNumber(String immigrantAlienNumber) {
+        this.immigrantAlienNumber = immigrantAlienNumber;
+    }
+
     private String relativeFirstName;
+    public void setRelativeFirstName(String relativeFirstName) {
+        this.relativeFirstName = relativeFirstName;
+    }
+
     private String relativeLastName;
+    public void setRelativeLastName(String relativeLastName) {
+        this.relativeLastName = relativeLastName;
+    }
+
     private String relativeAlienNumber;
+    public void setRelativeAlienNumber(String relativeAlienNumber) {
+        this.relativeAlienNumber = relativeAlienNumber;
+    }
+
     private String email;
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     // Getter methods for accessing form attributes
-    public int getId() {
+    public int getID() {
         return id;
     }
 
     public String getStatus() {
         return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setID(int id) {
+        this.id = id;
     }
 
     public String getImmigrantFirstName() {
@@ -68,10 +104,14 @@ public class Form{
         forms.put(id, this);
     }
 
+    public Form(){
+        
+    }
+
     // Static method to retrieve a form by ID
     public static Form getForm(int id){
-        if (!isInteger(id)) {
-            throw new IllegalArgumentException("Invalid argument: id must be an integer");
+        if (id < 0) {
+            throw new IllegalArgumentException("Invalid argument: id must be a positive integer");
         }
 
         return forms.get(id);
@@ -79,6 +119,7 @@ public class Form{
 
     // Method for updating the database (placeholder implementation)
     public boolean updateDatabase(){
+        forms.put(id, this);
         return true;
     }
 

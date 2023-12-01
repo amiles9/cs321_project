@@ -45,7 +45,7 @@ public class DataEntry extends Main{
     @FXML protected void createForm(){
         feedback.setText("Submitted");
         Form form = new Form(immigrantFirstName.getText(), immigrantLastName.getText(), immigrantAlienNumber.getText(), relativeFirstName.getText(),relativeLastName.getText(), relativeAlienNumber.getText());
-        App.workflowTable.add_approve_form(form.getId());
+        App.workflowTable.addApproveForm(form.getID());
         submit.setVisible(false);
     }
 }

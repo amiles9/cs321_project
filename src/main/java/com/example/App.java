@@ -38,6 +38,13 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+        /*
+        System.out.println("------------------Form Tests Results:------------------");
+        FormTest formTest = new FormTest();
+        System.out.println("------------------WorkflowTable Tests Results:------------------");
+        WorkflowTest workflowText = new WorkflowTest();
+        System.exit(0);
+        */
     }
 
 }

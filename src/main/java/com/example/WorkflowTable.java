@@ -1,6 +1,4 @@
 package com.example;
-
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -16,18 +14,18 @@ public class WorkflowTable{
     }
 
     // Method to add a form to the review queue
-    public void add_review_form(int id){
-        // Check if the id is an integer
-        if (!isInteger(id)) {
+    public void addReviewForm(int id){
+        // Check if the id is a nonnegative integer
+        if (id < 0) {
             throw new IllegalArgumentException("Invalid argument: id must be an integer");
         }
         // Add the form ID to the review queue
         this.reviewer_queue.add(id);
     }
     // Method to add a form to the approver queue
-    public void add_approve_form(int id){
-        // Check if the id is an integer
-        if (!isInteger(id)) {
+    public void addApproveForm(int id){
+        // Check if the id is aa nonnegative integer
+        if (id < 0) {
             throw new IllegalArgumentException("Invalid argument: id must be an integer");
         }
         // Add the form ID to the approve queue
@@ -35,7 +33,7 @@ public class WorkflowTable{
     }
 
     // Method to get the next form in the review queue
-    public int next_review_form(){
+    public int nextReviewForm(){
         // Check if the review queue is empty
         if(reviewer_queue.peek() == null){
             return -1; // Return -1 if the queue is empty
@@ -44,7 +42,7 @@ public class WorkflowTable{
     }
 
     // Method to get the next form in the approve queue
-    public int next_approve_form(){
+    public int nextApproveForm(){
          // Check if the approve queue is empty
         if(approver_queue.peek() == null){
             return -1;// Return -1 if the queue is empty
