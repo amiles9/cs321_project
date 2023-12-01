@@ -75,4 +75,15 @@ public class FormTest {
         Form editedForm = new Form().setID(-1);
         assertEquals(editedForm.getID(), null);
     }
+
+    @Test
+    public void getFormNullTest() {
+        assertThrows(IllegalArgumentException.class, () -> form.getForm(null));
+    }
+
+    @Test
+    public void getFormNonIntegerTest() {
+        assertThrows(IllegalArgumentException.class, () -> form.getForm("nonIntegerValue"));
+    }
+
 }

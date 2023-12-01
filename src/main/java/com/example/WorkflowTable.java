@@ -15,10 +15,18 @@ public class WorkflowTable{
     }
 
     public void add_review_form(int id){
+        if (!isInteger(id)) {
+            throw new IllegalArgumentException("Invalid argument: id must be an integer");
+        }
+        
         this.reviewer_queue.add(id);
     }
 
     public void add_approve_form(int id){
+        if (!isInteger(id)) {
+            throw new IllegalArgumentException("Invalid argument: id must be an integer");
+        }
+        
         this.approver_queue.add(id);
     }
 
@@ -34,6 +42,15 @@ public class WorkflowTable{
             return -1;
         }
         else return approver_queue.poll();
+    }
+
+    private boolean isInteger(int value) {
+        try {
+            Integer.parseInt(String.valueOf(value));
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
 }

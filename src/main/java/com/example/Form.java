@@ -64,10 +64,23 @@ public class Form{
     }
 
     public static Form getForm(int id){
+        if (!isInteger(id)) {
+            throw new IllegalArgumentException("Invalid argument: id must be an integer");
+        }
+
         return forms.get(id);
     }
 
     public boolean updateDatabase(){
         return true;
+    }
+
+    private static boolean isInteger(int value) {
+        try {
+            Integer.parseInt(String.valueOf(value));
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }
